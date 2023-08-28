@@ -26,4 +26,6 @@ const container = document.getElementById('animation-one');
     autoplay: true, // Define se a animação deve começar automaticamente
     path: 'assets/image/programer.json' // Caminho para o arquivo JSON da animação
   });
+
+
   
