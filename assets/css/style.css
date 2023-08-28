@@ -99,4 +99,7 @@ nav {
   }
   /*fim do menu responsivo*/
 
-  
+  #animation-one {
+    width: 100%;
+    height: auto;
+  }

@@ -16,7 +16,7 @@ btnMobile.addEventListener("click", toggleMenu);
 btnMobile.addEventListener("touchstart", toggleMenu);
 
 
-const container = document.getElementById('minha-animacao');
+const container = document.getElementById('animation-one');
   
   // Configurações da animação (substitua 'nome-do-arquivo.json' pelo nome do seu arquivo Lottie)
   const animacao = lottie.loadAnimation({
@@ -24,6 +24,6 @@ const container = document.getElementById('minha-animacao');
     renderer: 'svg', // ou 'canvas' ou 'html'
     loop: true, // Define se a animação deve ser reproduzida em loop
     autoplay: true, // Define se a animação deve começar automaticamente
-    path: 'file:///C:/Users/FábioRocha/Desktop/AnalistaRocha/assets/image/programer.json' // Caminho para o arquivo JSON da animação
+    path: 'assets/image/programer.json' // Caminho para o arquivo JSON da animação
   });
   
