@@ -27,5 +27,14 @@ const container = document.getElementById('animation-one');
     path: 'assets/image/programer.json' // Caminho para o arquivo JSON da animação
   });
 
-
+  const containertwo = document.getElementById('animation-two');
+  
+  // Configurações da animação (substitua 'nome-do-arquivo.json' pelo nome do seu arquivo Lottie)
+  const animacaotwo = lottie.loadAnimation({
+    container: containertwo,
+    renderer: 'svg', // ou 'canvas' ou 'html'
+    loop: true, // Define se a animação deve ser reproduzida em loop
+    autoplay: true, // Define se a animação deve começar automaticamente
+    path: 'assets/image/seta.json' // Caminho para o arquivo JSON da animação
+  });
   

@@ -1,124 +1,181 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+#header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.9
+  ); /* Add a background color to make it stand out */
+  z-index: 1000; /* Sit on top */
+}
+
 #logo {
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 5%;
-    animation: transform 0.3s ease;
+  width: 50%;
+  margin-top: 5%;
+  margin-left: 5%;
+  animation: transform 0.3s ease;
 }
 #logo:hover {
-    transform: scale(1.1);
-  }
-
+  transform: scale(1.1);
+}
 /*inicio menu responsivo*/
 nav {
-    position: absolute;
-    left: 62%;
-    top: 9%;
-    z-index: 1000;
+  position: absolute;
+  left: 62%;
+  top: 45%;
+  z-index: 1000;
+}
+#menu1 {
+  position: absolute;
+  display: block;
+  width: 100vw;
+  top: 45px;
+  right: 0px;
+  background: #f9f9f9;
+  transition: 0.6s;
+  z-index: 1000;
+  height: 0;
+  visibility: hidden;
+  overflow-y: hidden;
+  left: 0%;
+  transform: translateX(-60%);
+}
+#menu1 a {
+  margin: 0 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+li {
+  font-family: Poppins-Regular;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 45px;
+  color: #0f241d;
+  flex-direction: column;
+  display: flex;
+  padding: 7%;
+  text-align: center;
+}
+#menu.active #menu1 {
+  height: calc(100vh - 70px);
+  visibility: visible;
+  overflow-y: auto;
+}
+#btn-mobile {
+  margin-left: 70%;
+  margin-top: 10%;
+  width: 18%;
+  display: flex;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  background: none;
+  gap: 0.5rem;
+}
+#hamburguer {
+  color: black;
+  width: 26px;
+  border-top: 2px solid;
+}
+#hamburguer::after,
+#hamburguer::before {
+  content: "";
+  display: block;
+  width: 26px;
+  height: 2px;
+  background: black;
+  margin-top: 5px;
+  transition: 0.3s;
+  position: relative;
+}
+#menu.active #hamburguer {
+  border-top-color: transparent;
+}
+#menu.active #hamburguer::before {
+  transform: rotate(135deg);
+}
+#menu.active #hamburguer::after {
+  transform: rotate(-135deg);
+  top: -7px;
+}
+#linha1 {
+  margin-top: 4%;
+}
+/*fim do menu responsivo*/
+main {
+  margin-top: 100px;
+}
+#animation-one {
+  display: inline;
+  width: 100%;
+  height: auto;
+}
+.first {
+  text-align: center;
+}
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-family: "Ysabeau Office", sans-serif;
+  font-weight: 500;
+  line-height: 33px;
+  font-size: 30px;
+  margin-bottom: 5%;
+}
+p {
+  font-family: "Josefin Sans", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  font-size: 25px;
+  margin-bottom: 5%;
+}
+.color-changing-word {
+  animation: colorChange 4s infinite alternate;
+}
+@keyframes colorChange {
+  0% {
+    color: red; /* Cor inicial */
   }
-  #menu1 {
-    position: absolute;
-    display: block;
-    width: 100vw;
-    top: 45px;
-    right: 0px;
-    background: #f9f9f9;
-    transition: 0.6s;
-    z-index: 1000;
-    height: 0;
-    visibility: hidden;
-    overflow-y: hidden;
-    left: 0%;
-    transform: translateX(-60%);
+  25% {
+    color: blue; /* Cor após 25% da animação */
   }
-  #menu1 a {
-    margin: 0 1rem;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+  50% {
+    color: green; /* Cor após 50% da animação */
   }
-  li {
-    font-family: Poppins-Regular;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 45px;
-    color: #0f241d;
-    flex-direction: column;
-    display: flex;
-    padding: 7%;
-    text-align: center;
+  75% {
+    color: orange; /* Cor após 75% da animação */
   }
-  #menu.active #menu1 {
-    height: calc(100vh - 70px);
-    visibility: visible;
-    overflow-y: auto;
+  100% {
+    color: red; /* Cor final (volta à cor inicial) */
   }
-  #btn-mobile {
-    margin-left: 70%;
-    margin-top: 10%;
-    width: 18%;
-    display: flex;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    border: none;
-    cursor: pointer;
-    background: none;
-    gap: 0.5rem;
+}
+#animation-two {
+  margin-left: 75%;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
+}
+#rows {
+  width: 100%;
+  height: 20vh;
+  background: url("../image/linhas.svg") no-repeat;
+  background-size: cover;
+  animation: moveBackground 5s linear infinite;
+}
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 0;
   }
-  #hamburguer {
-    color: black;
-    width: 26px;
-    border-top: 2px solid;
+  100% {
+    background-position: 100% 0;
   }
-  #hamburguer::after,
-  #hamburguer::before {
-    content: "";
-    display: block;
-    width: 26px;
-    height: 2px;
-    background: black;
-    margin-top: 5px;
-    transition: 0.3s;
-    position: relative;
-  }
-  #menu.active #hamburguer {
-    border-top-color: transparent;
-  }
-  #menu.active #hamburguer::before {
-    transform: rotate(135deg);
-  }
-  #menu.active #hamburguer::after {
-    transform: rotate(-135deg);
-    top: -7px;
-  }
-  #linha1 {
-    margin-top: 4%;
-  }
-  /*fim do menu responsivo*/
-
-  #animation-one {
-    width: 100%;
-    height: auto;
-  }
-  .first {
-   text-align: center;
-  }
-  h1 {
-    font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
-    font-size: 30px;
-    margin-bottom: 5%;
-  }
-  p {
-    font-family: Poppins-Regular;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    font-size: 20px;
-    margin-bottom: 5%;
-  }
+}
