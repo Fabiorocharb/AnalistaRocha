@@ -32,6 +32,13 @@
       rel="stylesheet"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js"></script>
+    <!-- Adicione o jQuery (se já não estiver sendo usado em seu projeto) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Adicione a biblioteca Slick Carousel -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
   </head>
   <body>
     <header id="header">
@@ -65,7 +72,7 @@
       </nav>
     </header>
     <main>
-      <div id="animation-one"></div>
+      <div id="animation-prog"></div>
       <div class="first">
         <h1>
           Que tal um site <br />
@@ -78,7 +85,7 @@
         </p>
       </div>
       <section id="rows"></section>
-      <div id="animation-two"></div>
+      <div id="animation-seta"></div>
 
       <div id="second">
         <h2>
@@ -89,7 +96,7 @@
 
       <div id="card">
         <div class="cards">
-          <div id="animation-three"></div>
+          <div id="animation-seo"></div>
           <p class="partetwo">
             Trabalho com detalhes <br />
             para melhoramento do SEO.
@@ -97,7 +104,7 @@
         </div>
 
         <div class="cards">
-          <div id="animation-four"></div>
+          <div id="animation-responsible"></div>
           <p class="partetwo">
             Sites responsivo <br />
             Adaptados a qualquer tela.
@@ -105,14 +112,42 @@
         </div>
 
         <div class="cards">
-          <div id="ui-ux"></div>
+          <div id="animation-uxui"></div>
           <p class="partetwo">
             Designer personalizado<br />
             UX/UI.
           </p>
         </div>
+        <section id="setatwo"></section>
+        <h3>
+          Conheça algumas de <br />
+          Nossa páginas.
+        </h3>
       </div>
-      <section id="rows1"></section>
+      <div class="carousel">
+        <div class="project">
+          <img src="projeto1.jpg" alt="Projeto 1">
+          <p>Descrição do Projeto 1</p>
+        </div>
+        <div class="project">
+          <img src="projeto2.jpg" alt="Projeto 2">
+          <p>Descrição do Projeto 2</p>
+        </div>
+        <div class="project">
+          <img src="projeto2.jpg" alt="Projeto 2">
+          <p>Descrição do Projeto 3</p>
+        </div>
+        <!-- Adicione mais projetos aqui -->
+      </div>
+      
+      <div class="carousel-navigation">
+        <div class="dot" data-slide="0"></div>
+        <div class="dot" data-slide="1"></div>
+        <div class="dot" data-slide="2"></div>
+        <!-- Adicione mais bolas indicadoras conforme necessário -->
+      </div>
+      
+      
     </main>
     <script src="assets/js/script.js"></script>
   </body>
