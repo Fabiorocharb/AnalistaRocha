@@ -240,7 +240,7 @@ h3 {
 }
 /* Estilo para a imagem dentro do projeto */
 .project img {
-  max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+ width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave à imagem */
 }
 .project img:hover {
