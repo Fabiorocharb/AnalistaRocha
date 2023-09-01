@@ -230,34 +230,80 @@ h3 {
   margin-bottom: 5%;
 }
 /* Estilos para o carrossel */
-.carousel {
-  width: 100%; /* Ocupa 100% da largura do dispositivo móvel */
-  margin: 0;
-  padding: 0;
-}
-
-/* Estilos para os projetos individuais (slides) */
 .project {
   text-align: center;
-  padding: 20px;
+  padding: 7px;
+  display: flex; /* Use flexbox para alinhar verticalmente os elementos */
+  flex-direction: column; /* Alinhar os elementos em coluna */
+  align-items: center; /* Alinhar horizontalmente ao centro */
+  justify-content: center; /* Alinhar verticalmente ao centro */
 }
-
-/* Estilos para as bolas indicadoras */
-.carousel-navigation {
-  text-align: center;
+/* Estilo para a imagem dentro do projeto */
+.project img {
+  max-width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave à imagem */
+}
+.project img:hover {
+  transform: scale(1.1);
+}
+/* Estilo para o texto de descrição do projeto */
+.project p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333; /* Cor do texto */
+  margin-top: 10px; /* Ajuste a margem superior conforme necessário */
+}
+/* Adicione um pouco de espaçamento entre os projetos */
+.project + .project {
   margin-top: 20px;
 }
-
+.carousel-navigation {
+  text-align: center;
+  margin-top: 0px;
+}
 .dot {
-  width: 20px;
-  height: 20px;
+  width: 10px;
+  height: 10px;
   background-color: #007bff;
   border-radius: 50%;
   display: inline-block;
   margin-right: 10px;
   cursor: pointer;
+  margin-bottom: 5%;
 }
-
 .dot.active {
   background-color: #ff5722;
+}
+/* Estilize o botão "previous" */
+.slick-prev {
+  margin-left: 2%;
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  padding: 5px 10px; /* Espaçamento interno do botão */
+  border-radius: 5px; /* Borda arredondada do botão */
+  cursor: pointer;
+}
+
+/* Estilize o botão "next" */
+.slick-next {
+  margin-left: 2%;
+  background-color: #007bff; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  border: none; /* Remove a borda do botão */
+  padding: 5px 10px; /* Espaçamento interno do botão */
+  border-radius: 5px; /* Borda arredondada do botão */
+  cursor: pointer;
+}
+
+/* Estilize os botões quando o cursor passar por cima */
+.slick-prev:hover, .slick-next:hover {
+  background-color: #0056b3; /* Cor de fundo alterada quando passar o cursor por cima */
+}
+
+#setasix {
+  margin-left: 75%;
+  justify-content: center;
+  align-items: center;
+  width: 15%;
 }

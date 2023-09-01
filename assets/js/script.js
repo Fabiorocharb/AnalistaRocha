@@ -72,6 +72,15 @@ const animacaoseven = lottie.loadAnimation({
   path: "assets/image/seta.json",
 });
 
+const rowsss = document.getElementById("setasix");
+const animacaoeight = lottie.loadAnimation({
+  container: setasix,
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "assets/image/seta.json",
+});
+
 $(document).ready(function(){
   const $carousel = $('.carousel');
   const $dots = $('.dot');
@@ -84,10 +93,23 @@ $(document).ready(function(){
       speed: 300,
       slidesToShow: 1,
       slidesToScroll: 1,
-      adaptiveHeight: true // Mantém a altura consistente para projetos de diferentes tamanhos
+      adaptiveHeight: true// Mantém a altura consistente para projetos de diferentes tamanhos
     });
   }
-
+  $(document).ready(function() {
+    // Seletor para o botão "previous"
+    const $prevButton = $('.slick-prev');
+  
+    // Seletor para o botão "next"
+    const $nextButton = $('.slick-next');
+  
+    // Defina o novo texto para o botão "previous" (anterior)
+    $prevButton.text('Anterior');
+  
+    // Defina o novo texto para o botão "next" (próximo)
+    $nextButton.text('Próximo');
+  });
+  
   // Adicione um evento de clique às bolas indicadoras para dispositivos móveis
   $dots.on('click', function() {
     const slideIndex = $(this).data('slide');
