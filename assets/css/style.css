@@ -307,3 +307,11 @@ h3 {
   align-items: center;
   width: 15%;
 }
+#aboutDev {
+  text-align: center;
+  align-items: center;
+}
+.perfil {
+  width: 100%;
+  height: auto;
+}
