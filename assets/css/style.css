@@ -315,3 +315,9 @@ h3 {
   width: 100%;
   height: auto;
 }
+#icon {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
