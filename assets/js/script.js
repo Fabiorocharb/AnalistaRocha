@@ -81,6 +81,15 @@ const animacaoeight = lottie.loadAnimation({
   path: "assets/image/seta.json",
 });
 
+const rowssss = document.getElementById("setaseven");
+const animacaonine = lottie.loadAnimation({
+  container: setaseven,
+  renderer: "svg",
+  loop: true,
+  autoplay: true,
+  path: "assets/image/seta.json",
+});
+
 $(document).ready(function(){
   const $carousel = $('.carousel');
   const $dots = $('.dot');
