@@ -123,17 +123,16 @@ main {
   text-align: center;
 }
 h1 {
-  font-family: "Dancing Script", cursive;
-  font-family: "Ysabeau Office", sans-serif;
-  font-weight: 500;
+  font-family: 'Elsie Swash Caps', cursive;
+  font-weight: 900;
   line-height: 33px;
   font-size: 30px;
   margin-bottom: 5%;
 }
 p {
-  font-family: "Josefin Sans", sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 28px;
   font-size: 25px;
   margin-bottom: 5%;
@@ -184,8 +183,7 @@ p {
   align-items: center;
 }
 h2 {
-  font-family: "Dancing Script", cursive;
-  font-family: "Ysabeau Office", sans-serif;
+  font-family: 'Elsie Swash Caps', cursive;
   font-size: 25px;
   font-weight: 600;
   line-height: 33px;
@@ -335,6 +333,7 @@ h3 {
   background-color: #2ec42e;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin-bottom: 5%;
 }
 
 h6 {
@@ -381,7 +380,11 @@ input[type="submit"]:hover {
 }
 
 .icon-footer {
-  justify-content: space-around;
-  align-items: center;
   text-align: center;
+  margin-bottom: 5%; 
+}
+.lastpage {
+  background-color: #2ec42e;
+  text-align: center;
+  align-items: center;
 }
