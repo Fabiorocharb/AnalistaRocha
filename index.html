@@ -21,10 +21,16 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Elsie+Swash+Caps&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js"></script>
     <!-- Adicione o jQuery (se já não estiver sendo usado em seu projeto) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -43,7 +49,7 @@
   <body>
     <header id="header">
       <figure>
-        <a href="#"
+        <a href="index.html"
           ><img
             id="logo"
             src="assets/icon/logoAnalistaRocha.svg"
@@ -63,11 +69,11 @@
         </button>
 
         <ul id="menu1" role="menu1">
-          <li><a href="#">Seo</a></li>
+          <li><a href="#second">Seo</a></li>
           <li><a href="#">Projetos</a></li>
-          <li><a href="#">Portifólio</a></li>
-          <li><a href="#">Links úteis</a></li>
-          <li><a href="#">Contato</a></li>
+          <li><a href="#aboutDev">Portifólio</a></li>
+          <li><a href="https://github.com/Fabiorocharb/Links-de-desenvolvimento-web" target="_blank">Links úteis</a></li>
+          <li><a href="#mensagem">Contato</a></li>
         </ul>
       </nav>
     </header>
@@ -89,8 +95,10 @@
 
       <div id="second">
         <h2>
-          Boas praticas para o seu <br />
-          site se destacar !!
+          <span class="color-changing-word">
+            Boas praticas para o seu <br />
+            site se destacar !!
+          </span>
         </h2>
       </div>
 
@@ -98,15 +106,15 @@
         <div class="cards">
           <div id="animation-seo"></div>
           <p class="partetwo">
-            Trabalho com detalhes <br />
-            para melhoramento do SEO.
+            Trabalhamos com detalhes <br />
+            com melhor desempenho do SEO.
           </p>
         </div>
 
         <div class="cards">
           <div id="animation-responsible"></div>
           <p class="partetwo">
-            Sites responsivo <br />
+            Sites responsivos <br />
             Adaptados a qualquer tela.
           </p>
         </div>
@@ -120,8 +128,10 @@
         </div>
         <section id="setatwo"></section>
         <h3>
-          Conheça algumas de <br />
-          Nossa páginas.
+          <span class="color-changing-word">
+            Conheça algumas de <br />
+            Nossa páginas.</span
+          >
         </h3>
       </div>
       <div class="carousel">
@@ -163,8 +173,10 @@
         <!-- Adicione mais bolas indicadoras conforme necessário -->
       </div>
       <h3>
-        Conheça um pouco <br />
-        sobre o desenvolvedor.
+        <span class="color-changing-word">
+          Conheça um pouco <br />
+          sobre o desenvolvedor.
+        </span>
       </h3>
       <section id="setasix"></section>
       <div id="aboutDev">
@@ -175,54 +187,73 @@
             alt="Foto do desenvolvedor"
           />
         </figure>
-        <p>
+        <p class="readme">
           Sou Fábio Rocha, morador de Rio Bonito - RJ, graduando em analise e
           desenvolvimento de sistemas!
         </p>
-        <p>
+        <p class="readme">
           Sempre tive falicidade e gosto por tecnólogia, então em janeiro de
           2022, caí de cabeça na àrea, falo cabeça porque não costumo ficar no
           raso, sou curioso e me dedico bastante.
         </p>
-        <p>A cada dia que passa me aperfeiçou mais no desenvolvimento web,</p>
-        <p>✅ Tenho mais de 10 anos comprovada em outra área.</p>
-        <p>✅ Sou comprometido, resiiente e pontual.</p>
-        <p>E estou super animado para falar do seu projeto.</p>
-        <p>Confira algumas de minhas habilidades.</p>
-
+        <p class="readme">
+          A cada dia que passa me aperfeiçou mais no desenvolvimento web,
+        </p>
+        <p class="readme">✅ Tenho mais de 10 anos comprovada em outra área.</p>
+        <p class="readme">✅ Sou comprometido, resiiente e pontual.</p>
+        <p class="readme">E estou super animado para falar do seu projeto.</p>
+        <p class="readme">Confira algumas de minhas habilidades.</p>
+        <hr />
         <div id="icon">
           <figure>
             <img
+              class="html5"
               src="assets/icon/icons8-html5.svg"
               alt="Icone html5"
-              width="15%"
+              width="10%"
             />
             <img
+              class="css3"
               src="assets/icon/icons8-css3 (1).svg"
               alt="Icone css"
-              width="15%"
+              width="10%"
             />
             <img
+              class="javascript"
               src="assets/icon/icons8-javascript.svg"
               alt="Icone javascript"
-              width="15%"
+              width="10%"
             />
             <img
+              class="github"
+              src="assets/icon/icons8-github.svg"
+              alt="Icone Github"
+              width="10%"
+            />
+            <img
+              class="visualstudio"
               src="assets/icon/icons8-visual-studio-code-2019.svg"
               alt="Icone visual studio"
-              width="15%"
+              width="10%"
             />
             <img
+              class="figma"
               src="assets/icon/icons8-figma.svg"
               alt="Icone Figma"
-              width="15%"
+              width="10%"
             />
             <img
+              class="canva"
               src="assets/icon/icons8-canva (1).svg"
               alt="Icone canva"
-              width="15%"
+              width="10%"
             />
-            <img src="assets/icon/icons8-ux.svg" alt="Icone UX" width="15%" />
+            <img
+              class="uxx"
+              src="assets/icon/icons8-ux.svg"
+              alt="Icone UX"
+              width="10%"
+            />
           </figure>
         </div>
         <section id="setaseven"></section>
@@ -230,41 +261,66 @@
     </main>
     <footer>
       <div class="container">
-        <h6>Vamos conversar <br>
-          sobre o seu projeto?</h6>
+        <h6>
+          <span class="color-changing-word">
+            Vamos conversar <br />
+            sobre o seu projeto?</span
+          >
+        </h6>
         <form action="#" method="POST">
-            <div class="form-group">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" required></textarea>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Enviar">
-            </div>
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Enviar" />
+          </div>
         </form>
-    </div>
-    <div class="icon-footer">
-      <p>Vamos nos conectar?</p>
-      <div>
-        <figure>
-          <img src="assets/icon/icons8-instagram.svg" alt="Icone instagram" width="15%">
-          <img src="assets/icon/icons8-linkedin.svg" alt="Icone linkedin" width="15%">
-          <img src="assets/icon/icons8-github.svg" alt="Icone Github" width="15%">
-          <img src="assets/icon/icons8-whatsapp (1).svg" alt="Icone Whatsapp" width="15%">
-        </figure>
       </div>
-    </div>
-    <div class="lastpage">
-      <img src="assets/icon/logoAnalistaRocha.svg" alt="logo Analista Rocha" width="45%"/>
-      <p>© 2023 Fábio Rocha</p>
-    </div>
+      <div class="icon-footer">
+        <p><span class="color-changing-word">Vamos nos conectar?</span></p>
+        <div>
+          <figure>
+            <img class="instagram"
+              src="assets/icon/icons8-instagram.svg"
+              alt="Icone instagram"
+              width="10%"
+            />
+           <a href="https://www.linkedin.com/in/fabiorocharb/" target="_blank"><img class="linkedin"
+              src="assets/icon/icons8-linkedin.svg"
+              alt="Icone linkedin"
+              width="10%"
+            /></a>
+            <img class="github"
+              src="assets/icon/icons8-github.svg"
+              alt="Icone Github"
+              width="10%"
+            />
+            <img class="whatsapp"
+              src="assets/icon/icons8-whatsapp (1).svg"
+              alt="Icone Whatsapp"
+              width="10%"
+            />
+          </figure>
+        </div>
+      </div>
+      <div class="lastpage">
+      <a href="#index.html"></a>  <img
+          class="logo-footer"
+          src="assets/icon/logoAnalistaRocha.svg"
+          alt="logo Analista Rocha"
+          width="45%"
+        /></a>  
+        <p class="fabio">© 2023 Fábio Rocha</p>
+      </div>
     </footer>
     <script src="assets/js/script.js"></script>
   </body>
