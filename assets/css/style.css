@@ -317,11 +317,11 @@ h3 {
 .readme {
   font-family: "Roboto Flex", sans-serif;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 28px;
   font-size: 17px;
   text-align: left;
-  margin: 7%;
+  margin: 3%;
 }
 hr {
   margin-bottom: 5%;
@@ -437,4 +437,65 @@ input[type="submit"]:hover {
   text-align: center;
   align-items: center;
   padding: 5%;
+}
+
+@media (min-width: 768px) {
+  #logo {
+    width: 30%;
+    margin-left: 10%;
+  }
+  li {
+    font-size: 22px;
+  }
+  nav {
+    top: 55%;
+  }
+  #hamburguer {
+    width: 30px;
+  }
+  #hamburguer::after,
+  #hamburguer::before {
+    width: 30px;
+    margin-top: 7px;
+  }
+  #animation-prog {
+    display: block;
+    width: 70%;
+    margin-top: 20%;
+    margin-left: 15%;
+  }
+  h1 {
+    font-size: 35px;
+  }
+  p {
+    font-size: 28px;
+  }
+  #animation-seta {
+    width: 10%;
+  }
+  h2 {
+    font-size: 28px;
+  }
+  #card {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .cards {
+    width: 225px;
+    height: 225px;
+    margin: 2%;
+    margin-left: 0%;
+    margin-bottom: 15%;
+  }
+  .partetwo {
+    padding: 0%;
+    font-size: 22px;
+  }
+  #setatwo {
+    margin-left: 75%;
+    width: 10%;
+  }
+  h3 {
+    font-size: 28px;
+  }
 }
