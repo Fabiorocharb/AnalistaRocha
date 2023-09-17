@@ -125,6 +125,23 @@ $(document).ready(function(){
     $carousel.slick('slickGoTo', slideIndex);
   });
 });
+$(document).ready(function () {
+  // Inicialize o carrossel com configurações responsivas
+  $(".carousel").slick({
+    slidesToShow: 1, // Mostra apenas 1 slide por vez
+    slidesToScroll: 1, // Navega 1 slide de cada vez
+    responsive: [
+      {
+        breakpoint: 1024, // Quando a largura da tela for 1024 pixels ou mais
+        settings: {
+          slidesToShow: 1, // Mostra apenas 1 slide por vez
+          slidesToScroll: 1, // Navega 1 slide de cada vez
+        },
+      },
+      // Adicione mais configurações responsivas conforme necessário
+    ],
+  });
+});
 
 
 

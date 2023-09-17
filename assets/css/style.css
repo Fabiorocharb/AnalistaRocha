@@ -585,18 +585,21 @@ input[type="submit"]:hover {
   }
   .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Cria duas colunas de tamanho igual */
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Cria duas colunas de tamanho igual */
     gap: 2%; /* Define o espaçamento entre os elementos */
   }
-  #animation-prog{
+  #animation-prog {
     display: block;
-    margin-top: 10%;
+    margin-top: 0%;
     margin-left: 2%;
     width: 100%;
   }
   .first {
     text-align: center;
-    margin-top: 35%;
+    margin-top: 20%;
   }
   h1 {
     line-height: 40px;
@@ -606,15 +609,19 @@ input[type="submit"]:hover {
     line-height: 30px;
     font-size: 25px;
   }
-  #rows{
-  width: 100%;
-  height: 40vh;
-  margin-top: 0%;
+  #rows {
+    width: 100%;
+    height: 40vh;
+    margin-top: 0%;
   }
-  #setatwo,#setasix,
-  #animation-seta{
+  #setatwo,
+  #setasix,
+  #animation-seta {
     width: 8%;
     margin-left: 85%;
+  }
+  h2 {
+    font-size: 25px;
   }
   .cards {
     width: 300px;
@@ -626,5 +633,4 @@ input[type="submit"]:hover {
   .partetwo {
     padding: 9%;
   }
-
 }
