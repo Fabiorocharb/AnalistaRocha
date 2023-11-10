@@ -441,7 +441,7 @@ input[type="submit"]:hover {
 
 @media (min-width: 768px) {
   #logo {
-    width: 30%;
+    width: 25%;
     margin-left: 10%;
   }
   li {
@@ -465,16 +465,16 @@ input[type="submit"]:hover {
     margin-left: 15%;
   }
   h1 {
-    font-size: 35px;
+    font-size: 30px;
   }
   p {
-    font-size: 28px;
+    font-size: 25px;
   }
   #animation-seta {
     width: 10%;
   }
   h2 {
-    font-size: 28px;
+    font-size: 25px;
   }
   #card {
     flex-direction: row;
@@ -483,31 +483,27 @@ input[type="submit"]:hover {
   .cards {
     width: 225px;
     height: 225px;
-    margin: 2%;
+    margin: 1%;
     margin-left: 0%;
     margin-bottom: 15%;
   }
   .partetwo {
-    padding: 0%;
-    font-size: 22px;
+    padding: 5%;
+    font-size: 20px;
   }
   #setatwo {
     margin-left: 75%;
     width: 10%;
   }
   h3 {
-    font-size: 28px;
+    font-size: 25px;
   }
   #setasix {
     margin-left: 75%;
     width: 10%;
   }
-  .perfil {
-    width: 70%;
-    height: auto;
-  }
   .readme {
-    font-size: 22px;
+    font-size: 18px;
     text-align: center;
   }
   #setaseven {
@@ -515,19 +511,44 @@ input[type="submit"]:hover {
     width: 10%;
   }
   h6 {
-    font-size: 28px;
+    font-size: 25px;
+  }
+  .perfil {
+    width: 60%;
+  }
+  .container {
+    width: 50%;
   }
   .form-group {
-    font-size: 22px;
+    font-size: 18px;
   }
   .logo-footer {
-    width: 35%;
+    width: 28%;
   }
   .fabio {
     font-size: 20px;
   }
   .lastpage {
     padding: 1%;
+  }
+  .color-changing-word {
+    font-size: 25px;
+  }
+  .instagram {
+    width: 8%;
+  }
+  .linkedin {
+    width: 8%;
+  }
+  .github {
+    width: 8%;
+  }
+  .whatsapp {
+    width: 8%;
+  }
+  .carousel {
+    width: 95%; /* Adjust the value as needed */
+    margin: 0 auto;   /* Center the carousel */
   }
 }
 @media (min-width: 1024px) {
@@ -555,7 +576,7 @@ input[type="submit"]:hover {
   }
   nav {
     top: 5%;
-    left: 40%;
+    left: 39%;
     padding: 0%;
   }
   #menu1 {
@@ -616,6 +637,7 @@ input[type="submit"]:hover {
   }
   #setatwo,
   #setasix,
+  #setaseven,
   #animation-seta {
     width: 8%;
     margin-left: 85%;
@@ -633,4 +655,45 @@ input[type="submit"]:hover {
   .partetwo {
     padding: 9%;
   }
+  .perfil {
+    width: 50%;
+  }
+  .instagram,
+  .linkedin,
+  .github,
+  .whatsapp,
+  .html5,
+  .css3,
+  .javascript,
+  .visualstudio,
+  .figma,
+  .canva,
+  .uxx {
+    width: 7%;
+  }
+  .logo-footer {
+    width: 22%;
+  }
+  .carousel {
+    width: 95%; /* Adjust the value as needed */
+    margin: 0 auto;   /* Center the carousel */
+  }
 }
+@media (min-width: 1280px) {
+  #logo {
+    width: 18%;
+    margin-left: 7%;
+    margin-top: 3%;
+  }
+  nav {
+    top: 5%;
+    left: 48%;
+    padding: 0%;
+  }
+  #rows {
+    width: 100%;
+    height: 60vh;
+    margin-top: 0%;
+  }
+}
+
