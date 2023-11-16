@@ -548,7 +548,7 @@ input[type="submit"]:hover {
   }
   .carousel {
     width: 95%; /* Adjust the value as needed */
-    margin: 0 auto;   /* Center the carousel */
+    margin: 0 auto; /* Center the carousel */
   }
 }
 @media (min-width: 1024px) {
@@ -626,10 +626,6 @@ input[type="submit"]:hover {
     line-height: 40px;
     font-size: 38px;
   }
-  p {
-    line-height: 30px;
-    font-size: 25px;
-  }
   #rows {
     width: 100%;
     height: 40vh;
@@ -639,8 +635,9 @@ input[type="submit"]:hover {
   #setasix,
   #setaseven,
   #animation-seta {
-    width: 8%;
+    width: 6%;
     margin-left: 85%;
+    margin-top: 3%;
   }
   h2 {
     font-size: 25px;
@@ -655,8 +652,20 @@ input[type="submit"]:hover {
   .partetwo {
     padding: 9%;
   }
+  #aboutDev {
+    display: grid;
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Cria duas colunas de tamanho igual */
+    gap: 2%; /* Define o espaçamento entre os elementos */
+  }
   .perfil {
-    width: 50%;
+    width: 90%;
+  }
+  .readme {
+    font-size: 17px;
+    text-align: left;
   }
   .instagram,
   .linkedin,
@@ -669,14 +678,24 @@ input[type="submit"]:hover {
   .figma,
   .canva,
   .uxx {
-    width: 7%;
+    width: 10%;
   }
   .logo-footer {
     width: 22%;
   }
   .carousel {
     width: 95%; /* Adjust the value as needed */
-    margin: 0 auto;   /* Center the carousel */
+    margin: 0 auto; /* Center the carousel */
+  }
+  #talkProject {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .container {
+    width: 80%;
+  }
+  .icon-footer {
+    margin-top: 35%;
   }
 }
 @media (min-width: 1280px) {
@@ -695,5 +714,97 @@ input[type="submit"]:hover {
     height: 60vh;
     margin-top: 0%;
   }
+  #setatwo,
+  #setasix,
+  #setaseven,
+  #animation-seta {
+    width: 5%;
+  }
+  .readme {
+    font-size: 19px;
+  }
+  .logo-footer {
+    width: 18%;
+  }
 }
-
+@media (min-width: 1366px) {
+  nav {
+    left: 52%;
+  }
+  #animation-prog {
+    width: 72%;
+    margin-left: 13%;
+  }
+  .first {
+    margin-top: 10%;
+  }
+  .cards {
+    width: 380px;
+    height: 380px;
+  }
+  .logo-footer {
+    width: 16%;
+  }
+}
+@media (min-width: 1920px) {
+  #logo {
+    width: 13%;
+    margin-left: 20%;
+  }
+  nav {
+    left: 50%;
+  }
+  #animation-prog {
+    width: 60%;
+    margin-left: 35%;
+  }
+  .first {
+    margin-top: 10%;
+    margin-right: 30%;
+  }
+  #rows {
+    display: none;
+  }
+  #card {
+    justify-content: space-around;
+    align-items: center;
+  }
+  .cards {
+    width: 350px;
+    height: 350px;
+  }
+  #setatwo,
+  #setasix,
+  #setaseven,
+  #animation-seta {
+    width: 4%;
+    margin-left: 80%;
+    margin-top: 3%;
+  }
+  #projectdone .project img {
+    margin-left: 25%;
+    max-width: 50%;
+    height: auto; 
+    margin-bottom: 10px;
+  }
+  .perfil {
+    width: 65%;
+  }
+  .readme {
+    font-size: 19px;
+    width: 80%;
+  }
+  #icon {
+    width: 70%;
+  }
+  .container {
+    width: 60%;
+  }
+  .icon-footer {
+    margin-top: 15%;
+    width: 80%;
+  }
+  .logo-footer {
+    width: 15%;
+  }
+}
