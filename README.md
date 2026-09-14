@@ -23,11 +23,16 @@ O site continua estático, sem etapa de compilação.
 O formulário prepara uma mensagem com nome, email e texto e abre o WhatsApp.
 **O visitante confirma o envio no WhatsApp.** Não existe envio de email nem
 armazenamento no site. O número utilizado vem do link `#contact-whatsapp` no HTML;
-altere esse link se seu contato mudar. Se o navegador bloquear a nova janela,
-um link permite abrir a mensagem preparada. Sem JavaScript, o contato direto
+altere esse link se seu contato mudar. Ao abrir o WhatsApp, os campos são limpos
+e a página é recarregada. Se o navegador bloquear a nova janela, os dados são
+mantidos e um link permite tentar abrir a mensagem preparada. Sem JavaScript, o contato direto
 pelos ícones continua disponível.
 
 ## Testes de regressão
+
+O SEO técnico, a otimização dos SVGs e os passos de publicação e indexação estão
+documentados em [docs/SEO.md](docs/SEO.md). A revisão de SEO preserva o visual
+e os textos exibidos na página.
 
 Requer Python, Google Chrome e Playwright:
 

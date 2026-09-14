@@ -581,6 +581,14 @@ textarea {
 }
 
 @media (min-width: 1024px) {
+  html {
+    scroll-padding-top: 24px;
+  }
+
+  #header {
+    position: static;
+  }
+
   #rows img {
     /* A faixa decorativa se alarga sem crescer indefinidamente em altura. */
     width: 120%;

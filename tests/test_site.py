@@ -166,26 +166,52 @@ class SiteTests(unittest.TestCase):
         self.page.wait_for_function("document.querySelectorAll('.dot')[2].hasAttribute('aria-current')")
 
     def test_contact_validation_and_draft(self):
-        self.page.evaluate("() => { window.openedDraft = null; window.open = (...args) => { window.openedDraft = args; return null; }; }")
+        expected_phone = parse_qs(urlparse(self.page.locator("#contact-whatsapp").get_attribute("href")).query)["phone"]
+        self.context.route("https://api.whatsapp.com/**", lambda route: route.fulfill(status=200, content_type="text/html", body="<p>WhatsApp interceptado para teste.</p>"))
+        self.page.evaluate("window.contactPageMarker = true")
         submit = self.page.locator('button[type="submit"]')
         submit.click()
-        self.assertIsNone(self.page.evaluate("window.openedDraft"))
+        self.assertEqual(len(self.context.pages), 1)
         self.page.locator("#nome").fill("   ")
         self.page.locator("#email").fill("teste@example.com")
         self.page.locator("#mensagem").fill("   ")
         submit.click()
-        self.assertIsNone(self.page.evaluate("window.openedDraft"))
+        self.assertEqual(len(self.context.pages), 1)
+        self.assertTrue(self.page.evaluate("window.contactPageMarker"))
         self.page.locator("#nome").fill("Teste de revisão")
         self.page.locator("#mensagem").fill("Olá! Orçamento & dúvidas?\nQuero um site.")
-        submit.click()
-        args = self.page.evaluate("window.openedDraft")
-        query = parse_qs(urlparse(args[0]).query)
-        self.assertEqual(query["phone"], ["5521995023441"])
+        with self.context.expect_page() as popup_info, self.page.expect_navigation(wait_until="load"):
+            submit.click()
+        popup = popup_info.value
+        popup.wait_for_url("https://api.whatsapp.com/**")
+        query = parse_qs(urlparse(popup.url).query)
+        self.assertEqual(query["phone"], expected_phone)
         self.assertEqual(query["text"], ["Olá! Me chamo Teste de revisão.\nEmail: teste@example.com\n\nOlá! Orçamento & dúvidas?\nQuero um site."])
-        self.assertEqual(args[1:], ["_blank", "noopener,noreferrer"])
-        self.assertEqual(self.page.locator("#contact-draft").get_attribute("href"), args[0])
-        self.assertTrue(self.page.locator("#contact-draft").is_visible())
-        self.assertEqual(self.page.locator("#mensagem").input_value(), "Olá! Orçamento & dúvidas?\nQuero um site.")
+        self.assertTrue(popup.evaluate("window.opener === null"))
+        self.assertEqual(popup.evaluate("document.referrer"), "")
+        self.assertIsNone(self.page.evaluate("window.contactPageMarker"))
+        for field in ["nome", "email", "mensagem"]:
+            self.assertEqual(self.page.locator(f"#{field}").input_value(), "")
+        self.assertFalse(self.page.locator("#contact-draft").is_visible())
+        self.assertEqual(self.page.locator("#contact-status").inner_text(), "")
+
+    def test_contact_preserves_fields_if_popup_blocked(self):
+        self.page.evaluate("() => { window.contactPageMarker = true; window.originalWindowOpen = window.open; window.open = () => null; }")
+        self.page.locator("#nome").fill("Teste")
+        self.page.locator("#email").fill("teste@example.com")
+        self.page.locator("#mensagem").fill("Mensagem para testar bloqueio.")
+        self.page.locator('button[type="submit"]').click()
+        self.assertTrue(self.page.evaluate("window.contactPageMarker"))
+        self.assertEqual(self.page.locator("#mensagem").input_value(), "Mensagem para testar bloqueio.")
+        link = self.page.locator("#contact-draft")
+        self.assertTrue(link.is_visible())
+        self.assertIn("Mensagem para testar bloqueio.", parse_qs(urlparse(link.get_attribute("href")).query)["text"][0])
+        self.page.evaluate("() => { window.open = window.originalWindowOpen; }")
+        self.context.route("https://api.whatsapp.com/**", lambda route: route.fulfill(status=200, content_type="text/html", body="<p>WhatsApp interceptado para teste.</p>"))
+        with self.context.expect_page() as popup_info, self.page.expect_navigation(wait_until="load"):
+            link.click()
+        popup_info.value.wait_for_url("https://api.whatsapp.com/**")
+        self.assertEqual(self.page.locator("#mensagem").input_value(), "")
 
     def test_large_text(self):
         self.page.add_style_tag(content="html { font-size: 200%; }")

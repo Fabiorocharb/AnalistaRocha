@@ -118,6 +118,27 @@ document.getElementById("copyright-year").textContent = new Date().getFullYear()
 
 const contactForm = document.getElementById("contact-form");
 const contactFields = ["nome", "email", "mensagem"].map((id) => document.getElementById(id));
+const draftLink = document.getElementById("contact-draft");
+
+function continueInWhatsApp(url) {
+  // Abre primeiro uma janela vazia para detectar bloqueios antes de limpar os campos.
+  const whatsappWindow = window.open("about:blank", "_blank");
+  if (!whatsappWindow) return;
+  whatsappWindow.opener = null;
+  const whatsappLink = whatsappWindow.document.createElement("a");
+  whatsappLink.href = url;
+  whatsappLink.rel = "noopener noreferrer";
+  whatsappWindow.document.body.append(whatsappLink);
+  whatsappLink.click();
+  contactForm.reset();
+  window.location.reload();
+}
+
+draftLink.addEventListener("click", (event) => {
+  event.preventDefault();
+  continueInWhatsApp(draftLink.href);
+});
+
 contactFields.forEach((field) => {
   field.addEventListener("input", () => field.setCustomValidity(""));
 });
@@ -130,11 +151,10 @@ contactForm.addEventListener("submit", (event) => {
   const [name, email, message] = contactFields.map((field) => field.value.trim());
   const url = new URL(document.getElementById("contact-whatsapp").href);
   url.searchParams.set("text", `Olá! Me chamo ${name}.\nEmail: ${email}\n\n${message}`);
-  const draftLink = document.getElementById("contact-draft");
   draftLink.href = url.href;
   draftLink.hidden = false;
   document.getElementById("contact-status").textContent = "Mensagem preparada. Continue no WhatsApp para revisar e enviar. Se a janela não abrir, use o link abaixo.";
-  window.open(url.href, "_blank", "noopener,noreferrer");
+  continueInWhatsApp(url.href);
 });
 contactForm.querySelector('[type="submit"]').disabled = false;
 
