@@ -1,6 +1,51 @@
 
 
-> ****Status do projeto****: **Concluído✅** 
+> ****Status do projeto****: **Concluído✅**
+
+## Executar localmente
+
+Na pasta do projeto, execute `python -m http.server 8000 --bind 127.0.0.1`
+e abra http://127.0.0.1:8000. Use um servidor HTTP para carregar os arquivos
+JSON das animações; abrir o HTML por `file://` pode bloquear essas requisições.
+O site continua estático, sem etapa de compilação.
+
+## Revisão de responsividade — setembro de 2026
+
+- Layout com largura máxima, colunas flexíveis e cartões que crescem com o texto.
+- Menu acessível por teclado, com fechamento por link, clique fora e Esc.
+- Carrossel com rolagem nativa, botões e indicadores sincronizados, sem jQuery/Slick.
+- Ícones alternativos quando o Lottie não carrega e ilustrações estáticas para
+  visitantes que preferem movimento reduzido.
+- Dimensões reservadas para as imagens, foco visível e links externos protegidos
+  com `rel="noopener noreferrer"`.
+- Ano do rodapé atualizado automaticamente.
+
+O formulário prepara uma mensagem com nome, email e texto e abre o WhatsApp.
+**O visitante confirma o envio no WhatsApp.** Não existe envio de email nem
+armazenamento no site. O número utilizado vem do link `#contact-whatsapp` no HTML;
+altere esse link se seu contato mudar. Se o navegador bloquear a nova janela,
+um link permite abrir a mensagem preparada. Sem JavaScript, o contato direto
+pelos ícones continua disponível.
+
+## Testes de regressão
+
+Requer Python, Google Chrome e Playwright:
+
+```sh
+python -m pip install playwright
+python -m unittest discover -s tests -v
+```
+
+Os testes iniciam e encerram um servidor local automaticamente. Verificam
+larguras de 320 a 2560 pixels, orientação horizontal, texto a 200%, menu,
+carrossel, validação e preparação do contato, ausência de JavaScript e falhas
+de CDN. A abertura do WhatsApp é interceptada: nenhuma mensagem é enviada.
+O teste de animações reais requer internet. Para salvar capturas de tela,
+defina a variável de ambiente `SITE_SCREENSHOT_DIR` com uma pasta de destino.
+
+As verificações automatizadas usam Chrome; Safari e Firefox ainda precisam
+de validação específica. As imagens, textos biográficos e destinos externos
+do portfólio foram preservados.
 
 <h2> 🎯 Objetivo do projeto:</h2>
 

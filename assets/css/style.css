@@ -3,814 +3,611 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --blue: #0759b5;
+  --green: #2ec42e;
+  --content-width: 1200px;
+}
+
+html {
+  scroll-padding-top: 100px;
+}
+
+body {
+  color: #17211c;
+  background: #fff;
+  font-family: "Roboto Flex", Arial, sans-serif;
+  line-height: 1.5;
+  overflow-wrap: break-word;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+img {
+  height: auto;
+}
+
+button, input, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  color: var(--blue);
+}
+
+a:hover {
+  color: #7033a6;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+:focus-visible {
+  outline: 3px solid #17211c;
+  outline-offset: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* O cabeçalho ocupa espaço no fluxo, sem encobrir o início da página. */
 #header {
-  position: fixed;
+  position: sticky;
   top: 0;
-  left: 0;
-  width: 100%;
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.9
-  ); /* Add a background color to make it stand out */
-  z-index: 1000; /* Sit on top */
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  min-height: 80px;
+  padding: 12px max(16px, calc((100% - var(--content-width)) / 2));
+  background: rgba(255, 255, 255, 0.97);
+  box-shadow: 0 1px 8px rgb(0 0 0 / 8%);
+}
+
+#header > figure {
+  flex: 0 1 190px;
 }
 
 #logo {
-  width: 40%;
-  margin-top: 5%;
-  margin-left: 5%;
-  animation: transform 0.3s ease;
+  width: 190px;
 }
-#logo:hover {
-  transform: scale(1.1);
+
+#menu {
+  min-width: 0;
 }
-/*inicio menu responsivo*/
-nav {
-  position: absolute;
-  left: 62%;
-  top: 45%;
-  z-index: 1000;
-}
+
 #menu1 {
-  position: absolute;
-  display: block;
-  width: 100vw;
-  top: 45px;
-  right: 0px;
-  background: #f9f9f9;
-  transition: 0.6s;
-  z-index: 1000;
-  height: 0;
-  visibility: hidden;
-  overflow-y: hidden;
-  left: 0%;
-  transform: translateX(-60%);
+  list-style: none;
 }
+
 #menu1 a {
-  margin: 0 1rem;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
-}
-li {
-  font-family: Poppins-Regular;
-  font-size: 15px;
-  font-style: normal;
+  display: block;
+  padding: 12px 16px;
   font-weight: 700;
-  line-height: 45px;
-  color: #0f241d;
-  flex-direction: column;
-  display: flex;
-  padding: 7%;
-  text-align: center;
+  text-decoration: none;
 }
-#menu.active #menu1 {
-  height: calc(100vh - 70px);
-  visibility: visible;
-  overflow-y: auto;
-}
+
 #btn-mobile {
-  margin-left: 70%;
-  margin-top: 10%;
-  width: 18%;
-  display: flex;
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  border: none;
-  cursor: pointer;
-  background: none;
-  gap: 0.5rem;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
 }
+
 #hamburguer {
-  color: black;
   width: 26px;
-  border-top: 2px solid;
+  border-top: 2px solid currentColor;
 }
-#hamburguer::after,
-#hamburguer::before {
+
+#hamburguer::after, #hamburguer::before {
   content: "";
   display: block;
   width: 26px;
   height: 2px;
-  background: black;
   margin-top: 5px;
-  transition: 0.3s;
-  position: relative;
+  background: currentColor;
+  transition: transform 0.2s;
 }
+
 #menu.active #hamburguer {
   border-top-color: transparent;
 }
+
 #menu.active #hamburguer::before {
-  transform: rotate(135deg);
+  transform: translateY(7px) rotate(45deg);
 }
+
 #menu.active #hamburguer::after {
-  transform: rotate(-135deg);
-  top: -7px;
+  transform: rotate(-45deg);
 }
-#linha1 {
-  margin-top: 4%;
+
+.grid-container, #card, #projectdone, #aboutDev, #talkProject {
+  width: min(var(--content-width), calc(100% - 32px));
+  margin-inline: auto;
 }
-/*fim do menu responsivo*/
-main {
-  margin-top: 100px;
+
+.grid-container {
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  padding-block: 24px 40px;
 }
-#animation-prog {
-  display: inline;
-  width: 100%;
-  height: auto;
+
+.grid-container > *, #aboutDev > *, #talkProject > * {
+  min-width: 0;
 }
+
 .first {
   text-align: center;
 }
+
+h1, h2 {
+  font-family: "Elsie Swash Caps", Georgia, serif;
+  line-height: 1.3;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
 h1 {
-  font-family: "Elsie Swash Caps", cursive;
-  font-weight: 900;
-  line-height: 33px;
-  font-size: 27px;
-  margin-bottom: 5%;
+  font-size: clamp(1.7rem, 3.2vw, 2.5rem);
 }
-p {
-  font-family: "Roboto Flex", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 25px;
-  font-size: 20px;
-  margin-bottom: 5%;
-}
-.color-changing-word {
-  animation: colorChange 4s infinite alternate;
-}
-@keyframes colorChange {
-  0% {
-    color: red; /* Cor inicial */
-  }
-  25% {
-    color: blue; /* Cor após 25% da animação */
-  }
-  50% {
-    color: green; /* Cor após 50% da animação */
-  }
-  75% {
-    color: orange; /* Cor após 75% da animação */
-  }
-  100% {
-    color: red; /* Cor final (volta à cor inicial) */
-  }
-}
-#animation-seta {
-  margin-left: 75%;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-}
-#rows {
-  width: 100%;
-  height: 30dvh;
-  background: url("../image/linhas.svg") no-repeat;
-  background-size: cover;
-  animation: moveBackground 5s linear infinite;
-}
-@keyframes moveBackground {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
-}
-#second {
-  text-align: center;
-  align-items: center;
-}
+
 h2 {
-  font-family: "Elsie Swash Caps", cursive;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 33px;
-  margin-bottom: 5%;
-}
-#card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.cards {
-  width: 280px;
-  height: 280px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  margin-bottom: 25%;
-}
-.partetwo {
-  padding: 3.5%;
-  font-size: 17px;
-  text-align: center;
-  font-family: "Roboto Flex", sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 28px;
-}
-#setatwo {
-  margin-left: 70%;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
+  font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+  padding-inline: 16px;
 }
 
-h3 {
-  font-family: "Elsie Swash Caps", cursive;
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  line-height: 33px;
-  margin-bottom: 5%;
-}
-/* Estilos para o carrossel */
-.project {
-  text-align: center;
-  padding: 7px;
-  display: flex; /* Use flexbox para alinhar verticalmente os elementos */
-  flex-direction: column; /* Alinhar os elementos em coluna */
-  align-items: center; /* Alinhar horizontalmente ao centro */
-  justify-content: center; /* Alinhar verticalmente ao centro */
-}
-/* Estilo para a imagem dentro do projeto */
-.project img {
-  width: 100%; /* Garante que a imagem não exceda a largura do contêiner */
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra suave à imagem */
-}
-.project img:hover {
-  transform: scale(1.1);
-}
-/* Estilo para o texto de descrição do projeto */
-.project p {
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333; /* Cor do texto */
-  margin-top: 10px; /* Ajuste a margem superior conforme necessário */
-}
-/* Adicione um pouco de espaçamento entre os projetos */
-.project + .project {
-  margin-top: 20px;
-}
-.carousel-navigation {
-  text-align: center;
-  margin-top: 0px;
-}
-.dot {
-  width: 10px;
-  height: 10px;
-  background-color: #007bff;
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-  cursor: pointer;
-  margin-bottom: 5%;
-}
-.dot.active {
-  background-color: #ff5722;
-}
-/* Estilize o botão "previous" */
-.slick-prev {
-  margin-left: 2%;
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
-  border: none; /* Remove a borda do botão */
-  padding: 5px 10px; /* Espaçamento interno do botão */
-  border-radius: 5px; /* Borda arredondada do botão */
-  cursor: pointer;
-}
-
-/* Estilize o botão "next" */
-.slick-next {
-  margin-left: 2%;
-  background-color: #007bff; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
-  border: none; /* Remove a borda do botão */
-  padding: 5px 10px; /* Espaçamento interno do botão */
-  border-radius: 5px; /* Borda arredondada do botão */
-  cursor: pointer;
-}
-
-/* Estilize os botões quando o cursor passar por cima */
-.slick-prev:hover,
-.slick-next:hover {
-  background-color: #0056b3; /* Cor de fundo alterada quando passar o cursor por cima */
-}
-
-#setasix {
-  margin-left: 75%;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-}
-#aboutDev {
-  text-align: center;
-  align-items: center;
-}
-.perfil {
-  width: 100%;
-  height: auto;
-}
-.readme {
-  font-family: "Roboto Flex", sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 28px;
-  font-size: 17px;
-  text-align: left;
-  margin: 3%;
-}
-hr {
-  margin-bottom: 5%;
-  border-radius: 10px;
-}
-#icon {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  align-items: center;
-}
-.html5:hover,
-.css3:hover,
-.javascript:hover,
-.github:hover,
-.visualstudio:hover,
-.figma:hover,
-.canva:hover,
-.uxx:hover,
-.github:hover,
-.instagram:hover,
-.linkedin:hover,
-.whatsapp:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-
-#setaseven {
-  margin-left: 75%;
-  justify-content: center;
-  align-items: center;
-  width: 15%;
-}
-
-.container {
-  width: 95%;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #2ec42e;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  margin-bottom: 5%;
-}
-
-h6 {
-  font-family: "Elsie Swash Caps", cursive;
-  text-align: center;
-  font-size: 23px;
-  font-weight: 600;
-  line-height: 33px;
-  text-align: center;
-}
-
-.form-group {
-  font-family: "Elsie Swash Caps", cursive;
+p {
+  font-size: 1.125rem;
   margin-bottom: 20px;
 }
 
-label {
-  font-weight: bold;
-  display: block;
+.first p {
+  font-size: clamp(1.25rem, 2vw, 1.6rem);
 }
 
-input[type="text"],
-input[type="email"],
-textarea {
+.color-changing-word {
+  color: #b42318;
+  animation: colorChange 4s infinite alternate;
+}
+
+@keyframes colorChange {
+  0%, 100% {
+    color: #b42318;
+  }
+
+  25% {
+    color: #1746b0;
+  }
+
+  50% {
+    color: #16702b;
+  }
+
+  75% {
+    color: #a34400;
+  }
+
+}
+
+/* Reserva espaço antes de carregar o SVG e mantém um ícone se a CDN falhar. */
+.animation {
+  position: relative;
+}
+
+.animation > svg {
+  position: absolute;
+  inset: 0;
+}
+
+.animation-fallback {
+  position: absolute;
+  inset: 0;
+  width: 45%;
+  height: 60%;
+  margin: auto;
+  object-fit: contain;
+}
+
+.animation.is-loaded .animation-fallback {
+  display: none;
+}
+
+#animation-prog {
+  width: min(100%, 540px);
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+
+.arrow {
+  width: 56px;
+  height: 72px;
+  margin: 24px 12% 24px auto;
+}
+
+.arrow .animation-fallback {
+  font-size: 32px;
+  text-align: center;
+}
+
+#rows {
   width: 100%;
+  overflow: hidden;
+}
+
+#rows img {
+  /* As pontas retas ficam além da tela mesmo nos extremos do movimento. */
+  width: max(120%, 105vh);
+  width: max(120%, 105dvh);
+  max-width: none;
+  height: auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: moveLines 5s linear infinite alternate;
+}
+
+@keyframes moveLines {
+  0% {
+    transform: translateX(-54%);
+  }
+
+  100% {
+    transform: translateX(-46%);
+  }
+}
+
+#card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+  gap: 28px;
+  padding-block: 12px 40px;
+}
+
+.cards {
+  min-width: 0;
+  padding: 16px;
+  box-shadow: 3px 5px 12px rgb(0 0 0 / 22%);
+  border-radius: 10px;
+}
+
+.cards .animation {
+  height: 200px;
+}
+
+.partetwo {
+  font-size: 1.0625rem;
+  text-align: center;
+  margin: 12px 0 0;
+}
+
+/* A rolagem nativa funciona por toque e também sem JavaScript. */
+#projectdone {
+  max-width: 900px;
+  margin-bottom: 48px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  border-radius: 10px;
+}
+
+.project {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding: 12px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.project a {
+  display: block;
+  margin: 4px;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 6px;
+  box-shadow: 2px 3px 8px rgb(0 0 0 / 20%);
+}
+
+.project p {
+  margin: 16px 0 8px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.carousel-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.carousel-prev, .carousel-next, button[type="submit"] {
+  max-width: 100%;
+  min-height: 44px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 6px;
+  color: #fff;
+  background: var(--blue);
+}
+
+.carousel-prev:hover, .carousel-next:hover, button[type="submit"]:hover {
+  background: #00448e;
+}
+
+.carousel-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.dot {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: transparent;
+}
+
+.dot::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+.dot.active::before {
+  background: #b42318;
+  box-shadow: 0 0 0 3px #fff, 0 0 0 5px #b42318;
+}
+
+#aboutDev {
+  display: grid;
+  align-items: center;
+  gap: 32px;
+}
+
+.perfil {
+  width: min(100%, 480px);
+  margin-inline: auto;
+}
+
+.readme {
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin-block: 24px;
+}
+
+#icon figure, .icon-footer figure {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+}
+
+#icon img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.icon-footer a {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+}
+
+.icon-footer img {
+  width: 44px;
+  height: 44px;
+}
+
+#talkProject {
+  display: grid;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.container {
+  width: 100%;
+  padding: clamp(16px, 3vw, 28px);
+  background: var(--green);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgb(0 0 0 / 18%);
+}
+
+.container h2 {
+  padding-inline: 0;
+}
+
+.container .color-changing-word {
+  color: #17211c;
+  animation: none;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+input[type="text"], input[type="email"], textarea {
+  width: 100%;
+  min-width: 0;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #777;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 1rem;
+  background: #fff;
 }
 
 textarea {
+  display: block;
   resize: vertical;
-  height: 150px;
+  min-height: 150px;
 }
 
-input[type="submit"] {
-  font-family: "Roboto Flex", sans-serif;
-  background-color: #007bff;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-}
-
-input[type="submit"]:hover {
-  background-color: #0056b3;
+.form-note {
+  font-size: 0.9375rem;
 }
 
 .icon-footer {
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 18px;
   text-align: center;
-  margin-bottom: 5%;
 }
-.logo-footer {
-  width: 50%;
-}
-.logo-footer:hover {
-  cursor: pointer;
-  transform: scale(1.1);
-}
-.fabio {
-  font-family: "Roboto Flex", sans-serif;
-  font-size: 15px;
-}
+
 .lastpage {
-  background-color: #2ec42e;
+  padding: 24px 16px;
+  background: var(--green);
   text-align: center;
-  align-items: center;
-  padding: 1%;
+}
+
+.logo-footer {
+  width: 200px;
+  margin: 0 auto 16px;
+}
+
+.fabio {
+  font-size: 0.9375rem;
+  margin: 0;
+}
+
+@media (max-width: 1023px) {
+  #menu {
+    width: 100%;
+  }
+
+  #menu1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  /* O menu só é recolhido quando os controles já estão prontos. */
+  #menu.enhanced {
+    width: auto;
+  }
+
+  #menu.enhanced #btn-mobile {
+    display: flex;
+  }
+
+  #menu.enhanced #menu1 {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 100px);
+    max-height: calc(100dvh - 100px);
+    overflow-y: auto;
+    padding: 8px 16px;
+    background: #f9f9f9;
+    box-shadow: 0 6px 8px rgb(0 0 0 / 12%);
+  }
+
+  #menu.enhanced.active #menu1 {
+    display: block;
+  }
+
+  #menu1 a {
+    border-bottom: 1px solid #ddd;
+  }
+
+}
+
+@media (max-width: 479px) {
+  .carousel-navigation {
+    order: 1;
+    flex-basis: 100%;
+  }
+
 }
 
 @media (min-width: 768px) {
-  #logo {
-    width: 25%;
-    margin-left: 10%;
-  }
-  li {
-    font-size: 22px;
-  }
-  nav {
-    top: 55%;
-  }
-  #hamburguer {
-    width: 30px;
-  }
-  #hamburguer::after,
-  #hamburguer::before {
-    width: 30px;
-    margin-top: 7px;
-  }
-  #animation-prog {
-    display: block;
-    width: 70%;
-    margin-top: 20%;
-    margin-left: 15%;
-  }
-  h1 {
-    font-size: 30px;
-  }
-  p {
-    font-size: 25px;
-  }
-  #animation-seta {
-    width: 10%;
-  }
-  h2 {
-    font-size: 25px;
-  }
-  #card {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .cards {
-    width: 225px;
-    height: 225px;
-    margin: 1%;
-    margin-left: 0%;
-    margin-bottom: 15%;
-  }
-  .partetwo {
-    padding: 5%;
-    font-size: 20px;
-  }
-  #setatwo {
-    margin-left: 75%;
-    width: 10%;
-  }
-  h3 {
-    font-size: 25px;
-  }
-  #setasix {
-    margin-left: 75%;
-    width: 10%;
-  }
-  .readme {
-    font-size: 18px;
-    text-align: center;
-  }
-  #setaseven {
-    margin-left: 75%;
-    width: 10%;
-  }
-  h6 {
-    font-size: 25px;
-  }
-  .perfil {
-    width: 60%;
-  }
-  .container {
-    width: 50%;
-  }
-  .form-group {
-    font-size: 18px;
-  }
-  .logo-footer {
-    width: 28%;
-  }
-  .fabio {
-    font-size: 20px;
-  }
-  .lastpage {
-    padding: 1%;
-  }
-  .color-changing-word {
-    font-size: 25px;
-  }
-  .instagram {
-    width: 8%;
-  }
-  .linkedin {
-    width: 8%;
-  }
-  .github {
-    width: 8%;
-  }
-  .whatsapp {
-    width: 8%;
-  }
-  .carousel {
-    width: 95%; /* Adjust the value as needed */
-    margin: 0 auto; /* Center the carousel */
-  }
-}
-@media (min-width: 1024px) {
-  #header {
-    position: initial;
-  }
-  #logo {
-    width: 18%;
-    margin-left: 6%;
-    margin-top: 3%;
-  }
-  a {
-    color: rgb(6, 20, 209);
-    text-decoration: none;
-    transition: 0.3s;
-  }
-  a:hover {
-    color: rgb(225, 0, 255);
-    opacity: 0.7;
-    cursor: pointer;
-  }
-  /*comecei a fazer o menu*/
-  #btn-mobile {
-    display: none;
-  }
-  nav {
-    top: 5%;
-    left: 39%;
-    padding: 0%;
-  }
-  #menu1 {
-    top: 10%;
-    width: 100%;
-    right: initial;
-    transition: none;
-    z-index: initial;
-    height: initial;
-    visibility: initial;
-    overflow-y: initial;
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-  }
-  #menu1 a {
-    width: 100%;
-    margin: 30px;
-    border-bottom: unset;
-  }
-  li {
-    font-family: "Roboto Flex", sans-serif;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 45px;
-  }
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Cria duas colunas de tamanho igual */
-    gap: 2%; /* Define o espaçamento entre os elementos */
-  }
-  #animation-prog {
-    display: block;
-    margin-top: 0%;
-    margin-left: 2%;
-    width: 100%;
-  }
-  .first {
-    text-align: center;
-    margin-top: 20%;
-  }
-  h1 {
-    line-height: 40px;
-    font-size: 38px;
-  }
-  #rows {
-    width: 100%;
-    height: 40vh;
-    margin-top: 0%;
-  }
-  #setatwo,
-  #setasix,
-  #setaseven,
-  #animation-seta {
-    width: 6%;
-    margin-left: 85%;
-    margin-top: 3%;
-  }
-  h2 {
-    font-size: 25px;
-  }
-  .cards {
-    width: 300px;
-    height: 300px;
-    margin: 3%;
-    margin-left: 2%;
-    margin-bottom: 7%;
-  }
-  .partetwo {
-    padding: 9%;
-  }
-  #aboutDev {
-    display: grid;
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Cria duas colunas de tamanho igual */
-    gap: 2%; /* Define o espaçamento entre os elementos */
-  }
-  .perfil {
-    width: 90%;
-  }
-  .readme {
-    font-size: 17px;
-    text-align: left;
-  }
-  .instagram,
-  .linkedin,
-  .github,
-  .whatsapp,
-  .html5,
-  .css3,
-  .javascript,
-  .visualstudio,
-  .figma,
-  .canva,
-  .uxx {
-    width: 10%;
-  }
-  .logo-footer {
-    width: 22%;
-  }
-  #projectdone .project img {
-    margin-left: 5%;
-    width: 90%;
-    height: auto; 
-  }
   #talkProject {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
   }
-  .container {
-    width: 80%;
-  }
-  .icon-footer {
-    margin-top: 35%;
-  }
+
 }
-@media (min-width: 1280px) {
-  #logo {
-    width: 18%;
-    margin-left: 7%;
-    margin-top: 3%;
+
+@media (min-width: 1024px) {
+  #rows img {
+    /* A faixa decorativa se alarga sem crescer indefinidamente em altura. */
+    width: 120%;
+    height: clamp(240px, 20vw, 360px);
   }
-  nav {
-    top: 5%;
-    left: 48%;
-    padding: 0%;
+
+  #menu1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
-  #rows {
-    width: 100%;
-    height: 60vh;
-    margin-top: 0%;
+
+  .grid-container, #aboutDev {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-  #setatwo,
-  #setasix,
-  #setaseven,
-  #animation-seta {
-    width: 5%;
+
+  .grid-container {
+    padding-top: 40px;
   }
-  .readme {
-    font-size: 19px;
-  }
-  .logo-footer {
-    width: 18%;
-  }
-  #projectdone .project img {
-    margin-left: 15%;
-    width: 70%;
-    height: auto;
-  }
+
 }
-@media (min-width: 1366px) {
-  nav {
-    left: 52%;
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
-  #animation-prog {
-    width: 72%;
-    margin-left: 13%;
-  }
-  .first {
-    margin-top: 10%;
-  }
-  .cards {
-    width: 380px;
-    height: 380px;
-  }
-  .logo-footer {
-    width: 16%;
-  }
-}
-@media (min-width: 1920px) {
-  #logo {
-    width: 13%;
-    margin-left: 20%;
-  }
-  nav {
-    left: 50%;
-  }
-  #animation-prog {
-    width: 60%;
-    margin-left: 35%;
-  }
-  .first {
-    margin-top: 10%;
-    margin-right: 30%;
-  }
-  #rows {
-    display: none;
-  }
-  #card {
-    justify-content: space-around;
-    align-items: center;
-  }
-  .cards {
-    width: 350px;
-    height: 350px;
-  }
-  #setatwo,
-  #setasix,
-  #setaseven,
-  #animation-seta {
-    width: 4%;
-    margin-left: 80%;
-    margin-top: 3%;
-  }
-  #projectdone .project img {
-    margin-left: 25%;
-    max-width: 50%;
-    height: auto; 
-    margin-bottom: 10px;
-  }
-  .perfil {
-    width: 65%;
-  }
-  .readme {
-    font-size: 19px;
-    width: 80%;
-  }
-  #icon {
-    width: 70%;
-  }
-  .container {
-    width: 60%;
-  }
-  .icon-footer {
-    margin-top: 15%;
-    width: 80%;
-  }
-  .logo-footer {
-    width: 15%;
-  }
+
 }

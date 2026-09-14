@@ -18,7 +18,7 @@
     <link
       rel="shortcut icon"
       href="assets/icon/favicon.svg"
-      type="image/x-icon"
+      type="image/svg+xml"
     />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,61 +31,55 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,500&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js"></script>
-    <!-- Adicione o jQuery (se já não estiver sendo usado em seu projeto) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <!-- Adicione a biblioteca Slick Carousel -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-    />
+    <script defer src="assets/js/script.js"></script>
     <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      id="lottie-script"
+      defer
+      src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.0/lottie.min.js"
     ></script>
   </head>
   <body>
     <header id="header">
       <figure>
         <a href="index.html"
-          ><img
+          ><img width="80" height="40"
             id="logo"
             src="assets/icon/logoAnalistaRocha.svg"
             alt="Logo Analista Rocha"
         /></a>
       </figure>
 
-      <nav id="menu">
+      <nav id="menu" aria-label="Navegação principal">
         <button
-          aria-label="abrir menu"
+          type="button"
+          aria-label="Abrir menu"
           id="btn-mobile"
-          aria-haspopup="true"
           aria-controls="menu1"
           aria-expanded="false"
         >
-          <span id="hamburguer"></span>
+          <span id="hamburguer" aria-hidden="true"></span>
         </button>
 
-        <ul id="menu1" role="menu1">
-          <li><a href="#second">Seo</a></li>
+        <ul id="menu1">
+          <li><a href="#second">SEO</a></li>
           <li><a href="#projectdone">Projetos</a></li>
-          <li><a href="#aboutDev">Portifólio</a></li>
+          <li><a href="#aboutDev">Portfólio</a></li>
           <li>
             <a
               href="https://github.com/Fabiorocharb/Links-de-desenvolvimento-web"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
               >Links úteis</a
             >
           </li>
-          <li><a href="#mensagem">Contato</a></li>
+          <li><a href="#talkProject">Contato</a></li>
         </ul>
       </nav>
     </header>
     <main>
       <div class="grid-container">
-        <div id="animation-prog"></div>
+        <div id="animation-prog" class="animation" aria-hidden="true">
+          <img class="animation-fallback" src="assets/icon/icons8-visual-studio-code-2019.svg" alt="" />
+        </div>
         <div class="first">
           <h1>
             Que tal um site <br />
@@ -99,8 +93,10 @@
         </div>
       </div>
 
-      <section id="rows"></section>
-      <div id="animation-seta"></div>
+      <div id="rows" aria-hidden="true">
+        <img src="assets/image/linhas.svg" width="140" height="40" alt="" />
+      </div>
+      <div id="animation-seta" class="animation arrow" aria-hidden="true"><span class="animation-fallback">↓</span></div>
 
       <div id="second">
         <h2>
@@ -113,7 +109,7 @@
 
       <div id="card">
         <div class="cards">
-          <div id="animation-seo"></div>
+          <div id="animation-seo" class="animation" aria-hidden="true"><img class="animation-fallback" src="assets/icon/icons8-html5.svg" alt="" /></div>
           <p class="partetwo">
             Trabalhamos com o <br />
             melhor desempenho do SEO.
@@ -121,7 +117,7 @@
         </div>
 
         <div class="cards">
-          <div id="animation-responsible"></div>
+          <div id="animation-responsible" class="animation" aria-hidden="true"><img class="animation-fallback" src="assets/icon/icons8-css3 (1).svg" alt="" /></div>
           <p class="partetwo">
             Sites responsivos <br />
             adaptados a qualquer tela.
@@ -129,27 +125,29 @@
         </div>
 
         <div class="cards">
-          <div id="animation-uxui"></div>
+          <div id="animation-uxui" class="animation" aria-hidden="true"><img class="animation-fallback" src="assets/icon/icons8-ux.svg" alt="" /></div>
           <p class="partetwo">
             Designer personalizado<br />
             UX/UI.
           </p>
         </div>
       </div>
-      <section id="setatwo"></section>
-      <h3>
+      <div id="setatwo" class="animation arrow" aria-hidden="true"><span class="animation-fallback">↓</span></div>
+      <h2 id="projects-title">
         <span class="color-changing-word">
           Conheça um pouco <br />
           do nosso trabalho.</span
         >
-      </h3>
-      <div id="projectdone">
-        <div class="carousel">
+      </h2>
+      <section id="projectdone" aria-labelledby="projects-title" aria-roledescription="carrossel">
+        <div class="carousel" id="projects-carousel" tabindex="0" aria-label="Projetos: role horizontalmente ou use as setas do teclado">
           <div class="project">
             <a
               href="https://fabiorocharb.github.io/ConstrutoraImbiara/"
-              target="_blank"
-              ><img
+              target="_blank" rel="noopener noreferrer"
+              ><img width="300" height="185"
+                loading="lazy"
+                decoding="async"
                 src="assets/image/construtoraImbiara.svg"
                 alt="Construtora Imbiara"
             /></a>
@@ -158,61 +156,63 @@
           <div class="project">
             <a
               href="https://fabiorocharb.github.io/beautysalon/"
-              target="_blank"
+              target="_blank" rel="noopener noreferrer"
             >
-              <img src="assets/image/beautysalon.svg" alt="beautysalon"
+              <img width="300" height="185" loading="lazy" decoding="async" src="assets/image/beautysalon.svg" alt="beautysalon"
             /></a>
             <p class="working">BeautySalon</p>
           </div>
           <div class="project">
             <a
               href="https://fabiorocharb.github.io/Acesso.Felino/"
-              target="_blank"
-              ><img src="assets/image/acessoFelino.svg" alt="Acesso felino"
+              target="_blank" rel="noopener noreferrer"
+              ><img width="300" height="185" loading="lazy" decoding="async" src="assets/image/acessoFelino.svg" alt="Acesso felino"
             /></a>
             <p class="working">Acesso felino</p>
           </div>
           <div class="project">
             <a
               href="https://fabiorocharb.github.io/Time-Calculation/"
-              target="_blank"
-              ><img
+              target="_blank" rel="noopener noreferrer"
+              ><img width="300" height="185"
+                loading="lazy"
+                decoding="async"
                 src="assets/image/calculo do tempo.svg"
                 alt="Calculo do tempo"
             /></a>
             <p class="working">Cálculo do tempo</p>
           </div>
           <div class="project">
-            <a href="https://brunapiresnutricionista.bohr.io/" target="_blank">
-              <img
+            <a href="https://brunapiresnutricionista.bohr.io/" target="_blank" rel="noopener noreferrer">
+              <img width="300" height="185"
+                loading="lazy"
+                decoding="async"
                 src="assets/image/nutricionista.svg"
                 alt="Bruna Pires Nutricionista"
             /></a>
             <p class="working">Bruna Pires Nutricionista</p>
           </div>
-          <!-- Adicione mais projetos aqui -->
         </div>
-      </div>
-
-      <div class="carousel-navigation">
-        <div class="dot" data-slide="0"></div>
-        <div class="dot" data-slide="1"></div>
-        <div class="dot" data-slide="2"></div>
-        <div class="dot" data-slide="3"></div>
-        <div class="dot" data-slide="4"></div>
-        <!-- Adicione mais bolas indicadoras conforme necessário -->
-      </div>
-      <h3>
+        <div class="carousel-controls" hidden>
+          <button type="button" class="carousel-prev" aria-controls="projects-carousel" aria-label="Projeto anterior">Anterior</button>
+          <div class="carousel-navigation" role="group" aria-label="Escolher projeto"></div>
+          <button type="button" class="carousel-next" aria-controls="projects-carousel" aria-label="Próximo projeto">Próximo</button>
+        </div>
+        <p class="sr-only" id="carousel-status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <h2>
         <span class="color-changing-word">
           Sobre o <br />
           desenvolvedor.
         </span>
-      </h3>
-      <section id="setasix"></section>
+      </h2>
+      <div id="setasix" class="animation arrow" aria-hidden="true"><span class="animation-fallback">↓</span></div>
       <div id="aboutDev">
         <figure>
-          <img
+          <img width="100" height="100"
             class="perfil"
+            loading="lazy"
+            decoding="async"
             src="assets/image/perfil.svg"
             alt="Foto do desenvolvedor"
           />
@@ -241,121 +241,114 @@
                 class="html5"
                 src="assets/icon/icons8-html5.svg"
                 alt="Icone html5"
-                width="10%"
               />
               <img
                 class="css3"
                 src="assets/icon/icons8-css3 (1).svg"
                 alt="Icone css"
-                width="10%"
               />
               <img
                 class="javascript"
                 src="assets/icon/icons8-javascript.svg"
                 alt="Icone javascript"
-                width="10%"
               />
               <img
                 class="github"
                 src="assets/icon/icons8-github.svg"
                 alt="Icone Github"
-                width="10%"
               />
               <img
                 class="visualstudio"
                 src="assets/icon/icons8-visual-studio-code-2019.svg"
                 alt="Icone visual studio"
-                width="10%"
               />
               <img
                 class="figma"
                 src="assets/icon/icons8-figma.svg"
                 alt="Icone Figma"
-                width="10%"
               />
               <img
                 class="canva"
                 src="assets/icon/icons8-canva (1).svg"
                 alt="Icone canva"
-                width="10%"
               />
               <img
                 class="uxx"
                 src="assets/icon/icons8-ux.svg"
                 alt="Icone UX"
-                width="10%"
               />
             </figure>
           </div>
         </div>
       </div>
-      <section id="setaseven"></section>
+      <div id="setaseven" class="animation arrow" aria-hidden="true"><span class="animation-fallback">↓</span></div>
     </main>
     <footer>
       <div id="talkProject">
         <div class="container">
-          <h6>
+          <h2>
             <span class="color-changing-word">
               Vamos conversar <br />
               sobre o seu projeto?</span
             >
-          </h6>
-          <form action="#" method="POST">
+          </h2>
+          <p id="contact-note" class="form-note">Preencha os dados para preparar uma mensagem. O WhatsApp será aberto para você revisar e confirmar o envio.</p>
+          <form id="contact-form" action="https://api.whatsapp.com/send" method="GET" aria-describedby="contact-note">
             <div class="form-group">
               <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required />
+              <input type="text" id="nome" name="nome" autocomplete="name" maxlength="100" required />
             </div>
             <div class="form-group">
               <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email" autocomplete="email" maxlength="254" required />
             </div>
             <div class="form-group">
               <label for="mensagem">Mensagem:</label>
-              <textarea id="mensagem" name="mensagem" required></textarea>
+              <textarea id="mensagem" name="mensagem" maxlength="2000" required></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" value="Enviar" />
+              <button type="submit" disabled>Continuar no WhatsApp</button>
             </div>
           </form>
+          <p id="contact-status" class="form-note" role="status"></p>
+          <a id="contact-draft" target="_blank" rel="noopener noreferrer" hidden>Abrir mensagem preparada no WhatsApp</a>
+          <noscript><p class="form-note">Para conversar, use o link do WhatsApp abaixo. O formulário precisa de JavaScript para preparar a mensagem.</p></noscript>
         </div>
         <div class="icon-footer">
-          <p><span class="color-changing-word">Vamos se conectar?</span></p>
+          <p><span class="color-changing-word">Vamos nos conectar?</span></p>
           <div>
             <figure>
               <a
                 href="https://www.instagram.com/analistarocha/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
               >
                 <img
                   class="instagram"
                   src="assets/icon/icons8-instagram.svg"
                   alt="Icone instagram"
-                  width="10%"
               /></a>
               <a
                 href="https://www.linkedin.com/in/fabiorocharb/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 ><img
                   class="linkedin"
                   src="assets/icon/icons8-linkedin.svg"
                   alt="Icone linkedin"
-                  width="10%"
               /></a>
-              <a href="https://github.com/Fabiorocharb" target="_blank"
+              <a href="https://github.com/Fabiorocharb" target="_blank" rel="noopener noreferrer"
                 ><img
                   class="github"
                   src="assets/icon/icons8-github.svg"
                   alt="Icone Github"
-                  width="10%"
               /></a>
               <a
+                id="contact-whatsapp"
                 href="https://api.whatsapp.com/send?phone=5521995023441&text=Ol%C3%A1%20!%20Gostaria%20de%20fazer%20um%20orçamento%20de%20um%20projeto."
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 ><img
                   class="whatsapp"
                   src="assets/icon/icons8-whatsapp (1).svg"
                   alt="Icone Whatsapp"
-                  width="10%"
               /></a>
             </figure>
           </div>
@@ -363,15 +356,13 @@
       </div>
       <div class="lastpage">
         <a href="index.html"
-          ><img
+          ><img width="80" height="40"
             class="logo-footer"
             src="assets/icon/logoAnalistaRocha.svg"
             alt="logo Analista Rocha"
-            width="45%"
         /></a>
-        <p class="fabio">© 2023 Fábio Rocha</p>
+        <p class="fabio">© <span id="copyright-year">2026</span> Fábio Rocha</p>
       </div>
     </footer>
-    <script src="assets/js/script.js"></script>
   </body>
 </html>
